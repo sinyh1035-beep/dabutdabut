@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": "ureuk-festival",
+      "title": "우륵문화제",
+      "category": "문화·축제",
+      "year": "2024-2025",
+      "tags": ["홍보마케팅", "플리마켓 운영", "영상 제작"],
+      "description": "충주의 대표 문화축제 — 홍보마케팅 전담, 플리마켓 운영, 에프터무비 제작까지 통합 수행한 다붓다붓의 대표 프로젝트입니다.",
+      "image_count": 0,
+      "color": "green"
+    },
+    {
+      "id": "dive-festival",
+      "title": "다이브페스티벌",
+      "category": "축제",
+      "year": "2023-2025",
+      "tags": ["영상 제작", "플리마켓 운영"],
+      "description": "충주 다이브페스티벌의 에프터무비·아카이브 영상을 제작하고, 플리마켓 운영까지 함께한 종합 축제 프로젝트입니다.",
+      "image_count": 0,
+      "color": "mustard"
+    },
+    {
+      "id": "chungju-seollem",
+      "title": "프로젝트 충주에설렘",
+      "category": "로컬 프로젝트",
+      "year": "시즌 1·2·3",
+      "tags": ["수안보의 봄", "관아골의 여름", "지역 콘텐츠"],
+      "description": "시즌 1을 시작으로 수안보의 봄, 관아골의 여름까지 — 충주 곳곳의 이야기를 콘텐츠로 풀어낸 시리즈 프로젝트입니다.",
+      "image_count": 0,
+      "color": "brown"
+    },
+    {
+      "id": "neighborhood-rebrand",
+      "title": "우리동네 리브랜딩",
+      "category": "브랜딩",
+      "year": "2024",
+      "tags": ["브랜드 전략", "디자인", "BI 개발"],
+      "description": "충주 지역 상권의 정체성을 시각적으로 체계화한 리브랜딩 프로젝트.",
+      "image_count": 0,
+      "color": "darkgreen"
+    },
+    {
+      "id": "chungcheong-gamyeong",
+      "title": "충청감영 프로젝트",
+      "category": "헤리티지",
+      "year": "2024",
+      "tags": ["아카이브", "콘텐츠 제작"],
+      "description": "충청감영의 역사적 가치를 현대적 콘텐츠로 풀어낸 아카이브 프로젝트.",
+      "image_count": 0,
+      "color": "mustarddark"
+    },
+    {
+      "id": "happiness-village",
+      "title": "충북 행복마을 아카이브",
+      "category": "아카이브",
+      "year": "2024",
+      "tags": ["영상 아카이브", "사진 기록"],
+      "description": "충청북도 행복마을의 시간을 영상과 사진으로 기록한 아카이브 프로젝트.",
+      "image_count": 0,
+      "color": "greendark"
+    }
+  ]
+}
