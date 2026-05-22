@@ -392,88 +392,145 @@ section { padding: 110px 5%; position: relative; }
 /* === About === */
 .about { background: var(--bg); }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-img-wrap {
-  position: relative;
-}
-
-.about-img-wrap::before {
-  content: '';
-  position: absolute;
-  top: -20px; left: -20px;
-  width: 100px; height: 100px;
-  border: 2px solid var(--mustard);
-  z-index: 0;
-}
-
-.about-img-wrap img {
-  width: 100%;
-  display: block;
-  position: relative;
-  z-index: 1;
+/* Quote Block - 시선 집중용 큰 카피 */
+.about-quote {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 80px;
+  padding: 60px 40px;
   background: var(--white);
-  padding: 20px;
   border: 1px solid var(--line);
+  position: relative;
 }
 
-.about-text .label {
+.about-quote .quote-mark {
+  position: absolute;
+  top: -20px; left: 40px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 100px;
+  font-style: italic;
+  color: var(--mustard);
+  line-height: 1;
+  background: var(--bg);
+  padding: 0 16px;
+}
+
+.about-quote h3 {
+  font-size: clamp(28px, 3.8vw, 42px);
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--ink);
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+.about-quote .quote-point {
+  color: var(--green);
+  position: relative;
+  display: inline-block;
+}
+
+.about-quote .quote-point::after {
+  content: ''; position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 10px;
+  background: var(--mustard);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.about-quote .quote-desc {
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: var(--ink-mid);
+  line-height: 1.85;
+}
+
+.about-quote .quote-desc strong { color: var(--green); font-weight: 700; }
+
+/* 2단 컬럼 - 큰 폰트 */
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+
+.about-col {
+  padding: 40px;
+  background: var(--white);
+  border-left: 4px solid var(--green);
+}
+
+.about-col-num {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 14px;
+  font-size: 36px;
   color: var(--mustard-dark);
-  letter-spacing: 3px;
+  line-height: 1;
   margin-bottom: 16px;
 }
 
-.about-text h2 {
-  font-size: clamp(28px, 3.5vw, 40px);
+.about-col-title {
+  font-size: 22px;
   font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.3;
-  margin-bottom: 28px;
   color: var(--ink);
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
 }
 
-.about-text h2 .accent { color: var(--green); }
-
-.about-text p {
-  font-size: 15px;
+.about-col p {
+  font-size: 16px;
   color: var(--ink-mid);
-  line-height: 1.9;
+  line-height: 1.95;
   margin-bottom: 18px;
 }
 
-.about-text p strong { color: var(--ink); font-weight: 700; }
+.about-col p:last-child { margin-bottom: 0; }
+.about-col p strong { color: var(--ink); font-weight: 700; }
 
-.vision-mission {
+/* Vision & Mission - 큰 박스 */
+.vision-mission-big {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 1px solid var(--line);
+  gap: 0;
+  background: var(--ink);
+  color: var(--white);
 }
 
-.vm-item .vm-label {
+.vm-big-item {
+  padding: 60px 50px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.vm-big-item:last-child { border-right: none; }
+
+.vm-big-label {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 12px;
-  color: var(--mustard-dark);
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--mustard);
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
 }
 
-.vm-item .vm-text {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.6;
+.vm-big-label::before {
+  content: ''; width: 32px; height: 1px; background: var(--mustard);
+}
+
+.vm-big-text {
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: -0.5px;
+}
+
+.vm-accent {
+  color: var(--mustard);
+  border-bottom: 2px solid var(--mustard);
+  padding-bottom: 2px;
 }
 
 /* === Service Areas === */
@@ -1421,7 +1478,9 @@ footer ul li a:hover { color: var(--mustard); }
   .stat-item:nth-child(2) { border-right: none; }
   .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid var(--line); }
   .section-head { grid-template-columns: 1fr; gap: 20px; }
-  .about-grid, .contact-inner, .profile-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+  .about-columns, .vision-mission-big, .contact-inner, .profile-cta-inner { grid-template-columns: 1fr; gap: 30px; }
+  .vm-big-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .vm-big-item:last-child { border-bottom: none; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .partners-grid { grid-template-columns: repeat(3, 1fr); }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1449,6 +1508,10 @@ footer ul li a:hover { color: var(--mustard); }
   .footer-top { grid-template-columns: 1fr; gap: 30px; }
   .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
   .contact-form, .contact-info-block { padding: 28px 22px; }
+  .about-quote { padding: 40px 24px; }
+  .about-quote .quote-mark { font-size: 70px; left: 20px; }
+  .about-col { padding: 28px 24px; }
+  .vm-big-item { padding: 40px 28px; }
 }
 
 /* Fade animation */
@@ -1566,29 +1629,62 @@ footer ul li a:hover { color: var(--mustard); }
         </h2>
       </div>
     </div>
-    <div class="about-grid">
-      <div class="about-img-wrap">
-        <img src="images/leaflet-page-1.png" alt="다붓다붓 협동조합 소개">
-      </div>
-      <div class="about-text">
-        <div class="label">DABUTDABUT COOPERATIVE</div>
-        <h2>현장에서 답을 찾는<br><span class="accent">실무자 그룹</span>입니다.</h2>
+
+    <!-- Quote Block - 크게 -->
+    <div class="about-quote">
+      <div class="quote-mark">"</div>
+      <h3>
+        현장에서 답을 찾고,<br>
+        전문성으로 성과를 <span class="quote-point">증명</span>합니다.
+      </h3>
+      <p class="quote-desc">
+        다붓다붓 협동조합은 충주를 기반으로 활동하는<br>
+        <strong>각 분야의 베테랑들이 모인 전문가 그룹</strong>입니다.
+      </p>
+    </div>
+
+    <!-- 2단 텍스트 - 큰 폰트 -->
+    <div class="about-columns">
+      <div class="about-col">
+        <div class="about-col-num">01</div>
+        <h4 class="about-col-title">우리는 누구인가</h4>
         <p>
           다붓다붓은 충주를 기반으로 활동하는 각 분야의 베테랑들이 모인 전문가 그룹입니다.
-          우리는 단순히 수익을 창출하는 것을 넘어, 지역의 고유한 자산이 문화와 관광의 핵심 콘텐츠가 될 수 있도록 돕습니다.
+          우리는 단순히 수익을 창출하는 것을 넘어, <strong>지역의 고유한 자산이 문화와 관광의 핵심 콘텐츠가 될 수 있도록</strong> 돕습니다.
         </p>
         <p>
-          현장에서 사진을 찍고, 영상을 만들고, 브랜드를 설계하며 행사와 전시를 운영해 온 실무자들이 <strong>'다붓다붓'이라는 이름 아래 하나로 뭉쳐, 기획부터 실행까지 공백 없는 원스톱 솔루션</strong>을 제공합니다.
+          지역 사회에 대한 깊은 애정과 검증된 실력을 바탕으로,
+          <strong>충주의 지속 가능한 미래를 함께 그려나갑니다.</strong>
         </p>
-        <div class="vision-mission">
-          <div class="vm-item">
-            <div class="vm-label">VISION</div>
-            <div class="vm-text">지역의 고유 자산을 문화 콘텐츠로 연결하여 지속 가능한 가치를 만든다.</div>
-          </div>
-          <div class="vm-item">
-            <div class="vm-label">MISSION</div>
-            <div class="vm-text">지역과 사람, 공간을 연결하는 문화 프로젝트를 만든다.</div>
-          </div>
+      </div>
+      <div class="about-col">
+        <div class="about-col-num">02</div>
+        <h4 class="about-col-title">충주의 시간을 기록해온 전문가</h4>
+        <p>
+          우리는 현장의 생리를 누구보다 잘 아는 실무자들입니다.
+          현장에서 사진을 찍고, 영상을 만들고, 브랜드를 설계하며 행사와 전시를 운영해 왔습니다.
+        </p>
+        <p>
+          각 분야에서 이미 실력을 인정받은 전문가들이
+          <strong>'다붓다붓'이라는 이름 아래 하나로 뭉쳐, 기획부터 실행까지 공백 없는 원스톱 솔루션</strong>을 제공합니다.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vision & Mission -->
+    <div class="vision-mission-big">
+      <div class="vm-big-item">
+        <div class="vm-big-label">VISION · 비전</div>
+        <div class="vm-big-text">
+          지역의 고유 자산을 <span class="vm-accent">문화 콘텐츠</span>로 연결하여<br>
+          지속 가능한 가치를 만든다.
+        </div>
+      </div>
+      <div class="vm-big-item">
+        <div class="vm-big-label">MISSION · 미션</div>
+        <div class="vm-big-text">
+          지역과 사람, 공간을 연결하는<br>
+          <span class="vm-accent">문화 프로젝트</span>를 만든다.
         </div>
       </div>
     </div>
